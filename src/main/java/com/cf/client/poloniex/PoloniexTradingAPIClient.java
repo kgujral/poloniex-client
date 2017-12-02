@@ -176,7 +176,7 @@ public class PoloniexTradingAPIClient implements TradingAPIClient {
     try {
       List<NameValuePair> postParams = new ArrayList<>();
       postParams.add(new BasicNameValuePair("command", commandValue));
-      postParams.add(new BasicNameValuePair("nonce", String.valueOf(System.currentTimeMillis())));
+      postParams.add(new BasicNameValuePair("nonce", String.valueOf(System.currentTimeMillis() * 10000000)));
 
       if (additionalPostParams != null && additionalPostParams.size() > 0) {
         postParams.addAll(additionalPostParams);
