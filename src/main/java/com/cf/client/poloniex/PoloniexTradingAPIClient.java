@@ -3,6 +3,7 @@ package com.cf.client.poloniex;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
@@ -173,10 +174,11 @@ public class PoloniexTradingAPIClient implements TradingAPIClient {
   }
 
   private String returnTradingAPICommandResults(String commandValue, List<NameValuePair> additionalPostParams) {
+    BigInteger nonce = BigInteger.valueOf(System.currentTimeMillis()).multiply(BigInteger.valueOf(1000000));
     try {
       List<NameValuePair> postParams = new ArrayList<>();
       postParams.add(new BasicNameValuePair("command", commandValue));
-      postParams.add(new BasicNameValuePair("nonce", String.valueOf(System.currentTimeMillis() * 10000000)));
+      postParams.add(new BasicNameValuePair("nonce", nonce.toString()));
 
       if (additionalPostParams != null && additionalPostParams.size() > 0) {
         postParams.addAll(additionalPostParams);
