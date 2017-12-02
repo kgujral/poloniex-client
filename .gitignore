@@ -6,15 +6,7 @@
 .log
 .metadata/
 target/
-hercules-front-end/node_modules/
-hercules-front-end/package-lock.json/
-hercules-front-end/npm-debug.log
-hercules-front-end/app/css/sass/app.all.css
-hercules-front-end/app/js/bin/
-hercules-front-end/.gulp/
-hercules-front-end/app/dist/
 .mvn/
 .springBeans
 mvnw
 mvnw.cmd
-data/
