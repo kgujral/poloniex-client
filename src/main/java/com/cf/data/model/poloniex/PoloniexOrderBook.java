@@ -1,5 +1,6 @@
 package com.cf.data.model.poloniex;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -13,12 +14,11 @@ public class PoloniexOrderBook {
 
   public final Boolean isFrozen;
 
-  public final List<PoloniexOrderBookRateValuePair> asks;
+  public final List<List<BigDecimal>> asks;
 
-  public final List<PoloniexOrderBookRateValuePair> bids;
+  public final List<List<BigDecimal>> bids;
 
-  public PoloniexOrderBook(Long seq, Boolean isFrozen, List<PoloniexOrderBookRateValuePair> asks,
-      List<PoloniexOrderBookRateValuePair> bids) {
+  public PoloniexOrderBook(Long seq, Boolean isFrozen, List<List<BigDecimal>> asks, List<List<BigDecimal>> bids) {
     this.seq = seq;
     this.isFrozen = isFrozen;
     this.asks = asks;

@@ -44,11 +44,7 @@ public class GetDailyBTCChartDataExample {
     }
 
     PoloniexExchangeService service = new PoloniexExchangeService(tradingAPIKey, tradingAPISecret);
-    Long yesterdayEpochSecond = ZonedDateTime.now(ZoneOffset.UTC).minusDays(1).toEpochSecond();
-    List<PoloniexChartData> btcDailyChartData =
-        service.returnChartData(PoloniexExchangeService.USDT_BTC_CURRENCY_PAIR,
-            PoloniexExchangeService.DAILY_TIME_PERIOD, yesterdayEpochSecond);
-    LOG.info(btcDailyChartData);
+    service.returnOrderBook("USDT_ETH", 10);
   }
 
   private Properties loadProperties(String propertiesFileName) {
