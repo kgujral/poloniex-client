@@ -324,7 +324,6 @@ public class PoloniexExchangeService implements ExchangeService {
     PoloniexOrderBook orderBookResult = null;
     try {
       String orderBookString = publicClient.orderBook(currencyPair, depth);
-      System.out.println(orderBookString);
       orderBookResult = mapper.mapOrderBook(orderBookString);
       LOG.trace("Retrieved and mapped {} orderBookData in {} ms", currencyPair, System.currentTimeMillis() - start);
     } catch (Exception ex) {
