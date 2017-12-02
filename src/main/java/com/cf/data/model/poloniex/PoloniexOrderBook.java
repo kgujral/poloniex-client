@@ -10,6 +10,9 @@ import com.google.gson.Gson;
  * @author Karan
  */
 public class PoloniexOrderBook {
+
+  public final String error;
+
   public final Long seq;
 
   public final Boolean isFrozen;
@@ -18,7 +21,9 @@ public class PoloniexOrderBook {
 
   public final List<List<BigDecimal>> bids;
 
-  public PoloniexOrderBook(Long seq, Boolean isFrozen, List<List<BigDecimal>> asks, List<List<BigDecimal>> bids) {
+  public PoloniexOrderBook(String error, Long seq, Boolean isFrozen, List<List<BigDecimal>> asks,
+      List<List<BigDecimal>> bids) {
+    this.error = error;
     this.seq = seq;
     this.isFrozen = isFrozen;
     this.asks = asks;
